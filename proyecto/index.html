@@ -1,0 +1,663 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora xd</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+ 
+        <div class="agrupar">
+
+            <section> 
+                <article class="art">
+
+                    <div class="Container">
+
+                        <h1 class="text-center">Datos</h1>
+                        <div class="row justify-content-center mt-3">
+                            <label class="col-2  col-form-label">Digite el Caudal</label>
+                            <div class="col-8 col-md-4">
+
+                                <input type="number" id="caudal" class="form-control">
+
+                            </div>
+                            
+                        </div>
+
+                        <div class="row justify-content-center mt-3">
+                            <label class="col-2  col-form-label">Temperatura de entrada</label>
+                            <div class="col-8 col-md-4">
+
+                                <input type="number" id="tempe" class="form-control">
+
+                            </div>
+                            
+                        </div> 
+                        
+                        
+                        <div class="row justify-content-center mt-3">
+                            <label class="col-2  col-form-label">Temperatura de salida</label>
+                                <div class="col-8 col-md-4">
+
+                                    <input type="text" id="temps" class="form-control">
+
+                                </div>
+                           
+                        </div>
+
+                        <div class="row justify-content-center mt-3">
+                            <label class="col-2  col-form-label">Factor de servicio</label>
+                                <div class="col-8 col-md-4">
+
+                                    <input type="text" id="fact" class="form-control">
+
+                                </div>
+                           
+                        </div>
+
+
+                    </div>
+                    <div class="row justify-content-center mt-3">
+                        
+                        <div class="col-8 col-md-4">
+
+                            <button class="btn btn-success col-12" id="boton">Calcular</button>
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="row justify-content-center mt-5" >
+
+                        <div class="alert alert-success col-8 col-md-6" id="respuesta" role="alert"  >
+
+                        </div>
+
+                    </div>
+
+                </article>
+    
+    
+            </section>
+    
+        
+    
+            
+        
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <label class="col-2  col-form-label">INGRESE LA CANTIDAD PARA 500TR CENTRÍFUGOS:  </label>
+
+            <div class="col-8 col-md-4">
+
+                <input type="number" id="cen500" class="form-control">
+
+            </div>
+            
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <label class="col-2  col-form-label">INGRESE LA CANTIDAD PARA 750TR CENTRÍFUGOS:  </label>
+
+            <div class="col-8 col-md-4">
+
+                <input type="number" id="cen750" class="form-control">
+
+            </div>
+            
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <label class="col-2  col-form-label">INGRESE LA CANTIDAD PARA 1000TR CENTRÍFUGOS:  </label>
+
+            <div class="col-8 col-md-4">
+
+                <input type="number" id="cen1000" class="form-control">
+
+            </div>
+            
+        </div>
+
+        
+
+        <div class="row justify-content-center mt-3">
+            <label class="col-2  col-form-label">INGRESE LA CANTIDAD PARA 500TR ABSORCIÓN: </label>
+
+            <div class="col-8 col-md-4">
+
+                <input type="number" id="ab500" class="form-control">
+
+            </div>
+            
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <label class="col-2  col-form-label">INGRESE LA CANTIDAD PARA 750TR ABSORCIÓN:  </label>
+
+            <div class="col-8 col-md-4">
+
+                <input type="number" id="ab750" class="form-control">
+
+            </div>
+            
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <label class="col-2  col-form-label">INGRESE LA CANTIDAD PARA 1000TR ABSORCIÓN:  </label>
+
+            <div class="col-8 col-md-4">
+
+                <input type="number" id="ab1000" class="form-control">
+
+            </div>
+            
+        </div>
+
+        <div class="row justify-content-center mt-3">
+                        
+            <div class="col-8 col-md-4">
+
+                <button onclick="absorcion(); centrifugo();" class="btn btn-success col-12" id="cuadros">Calcular</button>
+
+            </div>
+            
+        </div>
+        
+
+        <div class="row justify-content-center mt-5" >
+
+            <div class="alert alert-success col-8 col-md-6" id="respuesta1" role="alert"  >
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="Container">
+            <div class="item" id="item1">
+                <form id="form1" runat="server">
+                    <div class="Table">
+                        <div class="Title">
+                            <p>
+                                Centrifugo</p>
+                        </div>
+                
+                        <div class="Heading">
+                
+                            <div class="Cell">
+                                <p>
+                                    Energia
+                                </p>
+                
+                            </div>
+                
+                            <div class="Cell">
+                                <p>
+                                    Emision C02
+                                </p>
+                
+                            </div>
+                
+                            <div class="Cell">
+                                <p>
+                                    capex
+                                </p>
+                
+                            </div>
+                            <div class="Cell">
+                                <p>
+                                    opex
+                                </p>
+                
+                            </div>
+                
+                        </div>
+                
+                        <div class="Row">
+                
+                            <div class="Cell">
+                
+                                <p>
+                                    Red publica
+                                </p>
+                
+                            </div>
+                
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="e1"   >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="g1"   >
+            
+                                    </div>
+            
+                                </div> 
+                
+                            </div>
+
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="ft1" role="alert" >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                        </div>
+                
+                        <div class="Row">
+                
+                            <div class="Cell">
+                
+                                <p>
+                                    Micro turbina a gas
+                                </p>
+                
+                            </div>
+                
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="rp1" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="o1" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="rp12" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                        </div>
+
+                        <div class="Row">
+                
+                            <div class="Cell">
+                
+                                <p>
+                                    Solar fotovoltaica
+                                </p>
+                
+                            </div>
+                
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="b1" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="b12" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="e12" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                        </div>
+
+                        <div class="Row">
+                
+                            <div class="Cell">
+                
+                                <p>
+                                    Energia eolica
+                                </p>
+                
+                            </div>
+                
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="ft12" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="ft13" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="c1" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                        </div>
+
+                        <div class="Row">
+                
+                            <div class="Cell">
+                
+                                <p>
+                                    Energia biomasa
+                                </p>
+                
+                            </div>
+                
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="c12" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="capex" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                            <div class="Cell">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="g12" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                        </div>
+                
+                    </div>
+                    </form>
+
+            </div>
+
+            <div class="item" id="item2">
+                <form id="form1" runat="server">
+                    <div class="Table2">
+                
+                        <div class="Title2">
+                
+                            <p>
+                
+                                Absorcion</p>
+                
+                        </div>
+                
+                        <div class="Heading2">
+                
+                            <div class="Cell">
+                                <p>
+                                    Energia
+                                </p>
+                
+                            </div>
+                
+                            <div class="Cell2">
+                                <p>
+                                    Emision C02
+                                </p>
+                
+                            </div>
+                
+                            <div class="Cell2">
+                                <p>
+                                    capex
+                                </p>
+                
+                            </div>
+                            <div class="Cell2">
+                                <p>
+                                    opex
+                                </p>
+                
+                            </div>
+                
+                        </div>
+                        <div class="Row2">
+                
+                            <div class="Cell2">
+                
+                                <p>
+                                    Microturbina a gas 
+                                </p>
+                
+                            </div>
+                
+                            <div class="Cell2">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="ag" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                            <div class="Cell2">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="ag1" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+
+                            <div class="Cell2">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="ag2" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                        </div>
+                
+                        <div class="Row2">
+                
+                            <div class="Cell2">
+                
+                                <p>
+                
+                                    Solar termica 
+                                </p>
+                
+                            </div>
+                
+                            <div class="Cell2">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="acapex" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                            <div class="Cell2">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="acapex1" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+
+                            <div class="Cell2">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="acapex2" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                        </div>
+
+                        <div class="Row2">
+                
+                            <div class="Cell2">
+                
+                                <p>
+                
+                                  Energia biomasa 
+                                </p>
+                
+                            </div>
+                
+                            <div class="Cell2">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="ab1" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                
+                            <div class="Cell2">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="ab2" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+
+                            <div class="Cell2">
+                
+                                <div class="row justify-content-center mt-5" >
+
+                                    <div class="alert alert-success col-8 col-md-100" id="ab3" role="alert"  >
+            
+                                    </div>
+            
+                                </div>
+                
+                            </div>
+                            
+                
+                        </div>
+                
+                    </div>
+                    </form>
+            </div>
+            
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
+
